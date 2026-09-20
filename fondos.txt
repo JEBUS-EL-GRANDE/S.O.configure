@@ -1,0 +1,4 @@
+~/.config/quickshell/ii/scripts/colors/switchwall.sh "/home/jebus/Imágenes/night-forest.mp4"
+
+~/.config/quickshell/ii/scripts/colors/switchwall.sh "/home/jebus/Imágenes/gothic-empress-red-eye.mp4"
+

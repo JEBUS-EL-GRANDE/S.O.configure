@@ -1,0 +1,10 @@
+# 1. Ver jugar sin aprendizaje (línea base, mejor para "verlo" la 1ª vez)
+.venv/bin/python run.py play --policy strafe
+
+# 2. Ver jugar mientras aprende (la ventana se ve en directo)
+.venv/bin/python run.py train --steps 100000 --checkpoint checkpoints/h_exagon.pt
+
+# 3. Ver jugar a un bot ya entrenado, sin exploración
+.venv/bin/python run.py play2eval  # no: mejor así:
+.venv/bin/python run.py eval --checkpoint checkpoints/h_exagon.pt --episodes 5
+Lo que verás en vivo

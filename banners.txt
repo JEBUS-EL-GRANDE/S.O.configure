@@ -1,0 +1,6 @@
+nano ~/.config/fish/config.fish 
+
+
+if status is-interactive
+    fastfetch --config ~/.config/fastfetch/config.jsonc
+end

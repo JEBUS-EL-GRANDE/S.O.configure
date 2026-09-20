@@ -1,0 +1,7 @@
+ editar el archivo Edit    .config/hypr/custom/keybinds.lua
+ 
+hl.bind("CTRL+SUPER+ALT+Slash", hl.dsp.exec_cmd("xdg-open ~/.config/hypr/custom/keybinds.lua"), {description = "Edit user keybinds"} )
+
+hl.bind("SUPER + U", hl.dsp.exec_cmd("alacritty"), {description = "Open Alacritty"} )
+
+hl.bind("SUPER + Y", hl.dsp.exec_cmd("btop"), {description = "Open btop"} )
