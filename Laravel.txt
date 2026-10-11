@@ -1,0 +1,28 @@
+====================instalar laravel 
+composer global require laravel/installer
+
+====================Crear nuevo proyecto y cd
+laravel nuevo mi_proyecto
+
+====================Instalar Composer
+sudo pacman -S composer
+====================Descomenta tu base de dato que usaras
+php --ini						#para buscar el php.ini
+
+%%%%%%%%%%%%%%%%%%%%% dentro el proyecto
+composer install
+	composer update --ignore-platform-reqs		# (si no da el primero)
+cp .env.example .env					#crear el .env
+php artisan migrate					#migrar las tablas a la bd
+php artisan key:generate
+php artisan serve
+
+
+php --ini						#para buscar el php.ini 
+
+
+######################################################### Datos extras ##############################################################
+(que es composer)	PHP						Composer
+Qué es			El lenguaje de programación en sí		Un gestor de dependencias para PHP
+Para qué sirve		Escribes código PHP que se ejecuta		Descarga e instala librerías que necesitas
+Analogía		Como Python					Como pip

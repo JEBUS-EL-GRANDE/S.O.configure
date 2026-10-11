@@ -1,0 +1,37 @@
+================================apps de trabajo 
+sudo pacman -S intellij-idea-community-edition
+yay -S staruml      					# o: paru -S staruml
+sudo pacman -S netbeans
+
+
+================================Complementos de trabajo
+sudo pacman -Syu          				#actualizar sistema
+yay -S ventoy
+yay -S davinci-resolve
+
+
+sudo pacman -S yt-dlp ffmpeg              	(actualizar)  sudo pacman -Syu yt-dlp				(descargar)   yt-dlp https://www.bilibili.com/video/BV1xx411c7mD
+-----bilibili
+sudo pacman -S --needed base-devel git
+git clone https://aur.archlinux.org/bilibili-bin.git
+cd bilibili-bin
+makepkg -si
+
+-----vscode 
+cd /opt
+sudo git clone https://aur.archlinux.org/visual-studio-code-bin.git
+sudo chmod -R 777 /opt/visual-studio-code-bin
+cd visual-studio-code-bin/
+makepkg -si   
+
+
+================================COMANDOS DIVERTIDOS 
+yay -S cmatrix
+yay -S nyancat
+yay -S tty-clock            			tty-clock -c
+yay -S hollywood
+yay -S sl 
+yay -S cava 
+yay -S lavat
+yay -S asciiquarium
+yay -S cbonsai

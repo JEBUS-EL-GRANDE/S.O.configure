@@ -1,0 +1,67 @@
+MariaDB
+====================Instalacion
+sudo pacman -S mariadb
+
+sudo mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql		#para inicializarlo
+
+====================Arrancar y habilitar el servicio 
+sudo systemctl start mariadb      				# iniciar ahora
+sudo systemctl status mariadb     				# estado de maria
+sudo systemctl stop mariadb     				# parar base de datos
+sudo systemctl enable mariadb     				# iniciar en cada arranque
+
+====================entrar a maria o a otra db
+sudo mariadb
+mariadb -u root -p
+mariadb -u MiUsuarioJUAN -p
+mariadb -u MiUsuarioJUAN -p MibaseDeDatos
+
+====================CREACION DE USUARIO
+CREATE USER 'MiUsuarioJUAN'@'localhost' IDENTIFIED BY 'MiClaveSegura123'; 
+
+SELECT User, Host FROM mysql.user;				#ver todos los usuarios
+SHOW GRANTS FOR 'nombre_usuario'@'host';			#ver cuantas bd tiene ese usuario
+DROP USER 'nombre_usuario'@'host';				#eliminar usuario
+DROP USER 'usuario1'@'localhost', 'usuario2'@'localhost';	#eliminar a varios de un tiron
+====================Darle permisos a la base de datos
+GRANT ALL PRIVILEGES ON MibaseDeDatos.* TO 'MiUsuarioJUAN'@'localhost';
+
+%%%%%%%%%%%%%%%%%%%%haciendo cosas dentro de la base de datos
+create database miBaseDeDatos;					#crear bd
+show databases;							#mostrar todas las bd
+use database MiBaseDeDatos;					#entrar en la bd
+show tables;							#para ver todas las tablas
+describe administrador;						#para ver como esta compuesta la bd (que tipo de variable maneja, recibe datos nulos o no, es pk o fk)
+select*from administrador;					#ver que datos tien esa tabla
+%%%%%%%%%%%%%%%%%%%
+==================== Poner contraseña a root (Una vez dentro con sudo mariadb:)
+CALTER USER 'root'@'localhost' IDENTIFIED VIA mysql_native_password USING PASSWORD('TuContraseña');
+FLUSH PRIVILEGES;
+EXIT;
+mariadb -u root -p
+====================Comandos extras
+-- Listar usuarios
+SELECT User, Host FROM mysql.user;
+-- Ver permisos de un usuario
+SHOW GRANTS FOR 'miusuario'@'localhost';
+-- Cambiar contraseña
+ALTER USER 'miusuario'@'localhost' IDENTIFIED BY 'NuevaClave';
+-- Eliminar usuario
+DROP USER 'miusuario'@'localhost';
+
+====================Acceso remoto (solo si es necesario)
+CREATE USER 'miusuario'@'%' IDENTIFIED BY 'MiClaveSegura123';
+GRANT ALL PRIVILEGES ON mi_base.* TO 'miusuario'@'%';
+FLUSH PRIVILEGES;
+
+
+
+
+
+######################################################### Datos extras ##############################################################
+Base de datos				Para qué sirve
+information_schema			Metadatos de todas las demás bases de datos (solo lectura)
+mysql					Configuración de usuarios, permisos y privilegios
+performance_schema			Métricas de rendimiento interno de MariaDB
+sys					Vistas de ayuda para diagnosticar problemas de rendimiento
+test					Base de datos de prueba (por defecto accesible para todos)
