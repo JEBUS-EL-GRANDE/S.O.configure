@@ -1,1 +1,2 @@
 sudo pacman -Rns firefoxs
+yay -Rns davinci-resolve

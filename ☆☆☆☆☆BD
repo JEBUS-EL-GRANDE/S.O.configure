@@ -33,6 +33,24 @@ use database MiBaseDeDatos;					#entrar en la bd
 show tables;							#para ver todas las tablas
 describe administrador;						#para ver como esta compuesta la bd (que tipo de variable maneja, recibe datos nulos o no, es pk o fk)
 select*from administrador;					#ver que datos tien esa tabla
+
++++++metiendo datos a una tabla 
+INSERT INTO personas (nombre, apellido, contrasena, sexo, ci, rol)
+VALUES ('nombre', 'apellido', 'MiClave1234', 'M', '12345678', 'ADMINISTRADOR');
++++++modificando una tupla en especifico
+UPDATE personas SET rol = 'ADMINISTRADOR' WHERE id_personal = 1;
++++++
+php artisan tinker						#metiendo datos a la base de datos: El modelo debe existir (ej. app/Models/Persona.php) y apuntar a la tabla
+\App\Models\User::create([
+    'name' => 'Admin',
+    'email' => 'admin@gmail.com',
+    'password' => bcrypt('12345678'),
+    'role' => 'admin',
+]);
++++++otro ejemplo
+protected $table = 'personas';
+protected $fillable = ['nombre', 'apellido', 'contrasena', 'sexo', 'ci', 'telefono', 'email', 'direccion', 'rol'];
+
 %%%%%%%%%%%%%%%%%%%
 ==================== Poner contraseña a root (Una vez dentro con sudo mariadb:)
 CALTER USER 'root'@'localhost' IDENTIFIED VIA mysql_native_password USING PASSWORD('TuContraseña');

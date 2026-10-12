@@ -8,7 +8,7 @@ sudo pacman -S netbeans
 sudo pacman -Syu          				#actualizar sistema
 yay -S ventoy
 yay -S davinci-resolve
-
+yay -S cutwire-drift-bin
 
 sudo pacman -S yt-dlp ffmpeg              	(actualizar)  sudo pacman -Syu yt-dlp				(descargar)   yt-dlp https://www.bilibili.com/video/BV1xx411c7mD
 -----bilibili
